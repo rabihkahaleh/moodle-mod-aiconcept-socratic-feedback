@@ -10,6 +10,20 @@ $instance = $DB->get_record('aiconcept', ['id' => $cm->instance], '*', MUST_EXIS
 require_login($course, true, $cm);
 $context = context_module::instance($cm->id);
 
+
+// Optional flag to let teachers preview the student view.
+$asstudent = optional_param('asstudent', 0, PARAM_BOOL);
+
+// If the user can manage the activity (teacher/manager) OR has viewlogs,
+// and they did not request to view as student, send them to the instructor dashboard.
+if (!$asstudent && (
+        has_capability('moodle/course:manageactivities', $context) ||
+        has_capability('mod/aiconcept:viewlogs', $context)
+    )) {
+    redirect(new moodle_url('/mod/aiconcept/instructor.php', ['id' => $cm->id]));
+}
+
+
 $PAGE->set_url('/mod/aiconcept/view.php', ['id' => $id]);
 $PAGE->set_title(format_string($instance->name));
 $PAGE->set_heading(format_string($course->fullname));
@@ -34,6 +48,20 @@ $PAGE->requires->js_call_amd('mod_aiconcept/student_chat', 'init', [[
     'cmid' => (int)$cm->id,
     'submissionid' => (int)($submission->id ?? 0)
 ]]);
+
+// Small icon:
+$iconurl = $OUTPUT->image_url('icon', 'mod_aiconcept');
+
+// Larger mark (monologo):
+$logourl = $OUTPUT->image_url('monologo', 'mod_aiconcept');
+
+echo html_writer::div(
+    html_writer::empty_tag('img', ['src'=>$logourl, 'alt'=>'AI Concept', 'class'=>'ac-logo']) .
+    html_writer::tag('span', format_string($instance->name), ['class'=>'ac-logo-title']),
+    'ac-logo-wrap'
+);
+
+
 
 echo $OUTPUT->header();
 echo $OUTPUT->render_from_template('mod_aiconcept/student_dashboard', $data);

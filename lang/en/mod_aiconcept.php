@@ -1,8 +1,8 @@
 <?php
 // English strings for aiconcept
-$string['pluginname'] = 'AI Concept (Programming Tutor)';
-$string['modulename'] = 'AI Concept';
-$string['modulenameplural'] = 'AI Concepts';
+$string['pluginname'] = 'Loop & Learn (Programming Tutor)';
+$string['modulename'] = 'Loop & Learn';
+$string['modulenameplural'] = 'Loop & Learn';
 $string['openai_api_key'] = 'OpenAI API key';
 $string['openai_api_key_desc'] = 'API key stored server-side; never exposed to clients.';
 $string['openai_model'] = 'OpenAI model';
@@ -18,3 +18,4 @@ $string['student_dashboard'] = 'Student dashboard';
 $string['instructor_dashboard'] = 'Instructor dashboard';
 $string['system_prompt'] = 'Tutor system prompt';
 $string['system_prompt_desc'] = 'Instruction the AI sees before any student message. Keep it concise and Socratic: diagnose likely misconceptions, ask one probing question, and offer one small, testable nudge.';
+$string['activityname']    = 'Loop & Learn AI';

@@ -75,3 +75,6 @@
 /* .aiconcept-card { background:#111827; border:1px solid #1f2937; border-radius:14px; padding:16px; margin:16px 0; }
 .aiconcept-card h4 { margin:0 0 8px; color:#e5e7eb; }
 .aiconcept-kb .btn { margin-right:8px; } */
+.ac-logo-wrap { display:flex; align-items:center; gap:.6rem; margin:.25rem 0 1rem; }
+.ac-logo-wrap img { width:44px; height:44px; border-radius:10px; }
+.ac-logo-title { font-weight:700; font-size:1.15rem; }
