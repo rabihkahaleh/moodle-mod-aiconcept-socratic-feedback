@@ -1,0 +1,45 @@
+<div class="aiconcept-hero">
+  <div>
+    <div class="title">{{name}}</div>
+    <div class="meta">AI-augmented Python tutoring workspace</div>
+  </div>
+  <div>
+    <span class="meta">Status</span>
+    <span class="aiconcept-progress {{status}}">{{statusUC}}</span>
+  </div>
+</div>
+
+<div id="aiconcept-root" class="aiconcept-card" data-cmid="{{cmid}}">
+  <h4>Conversation</h4>
+  <div id="aiconcept-history" class="aiconcept-history">
+    {{#history}}
+    <div class="aiconcept-msg {{role}}">
+      <div class="bubble">
+        <div class="role">{{roleLabel}}</div>
+        {{{content}}}
+      </div>
+    </div>
+    {{/history}}
+  </div>
+
+  <br><br><h4>Your code / reply</h4>
+  <textarea id="aiconcept-code" rows="10"></textarea>
+  <br><br>
+  <div class="aiconcept-actions">
+    <button type="button" id="aiconcept-submit" class="btn btn-primary">Submit</button>
+    <button type="button" id="aiconcept-clear" class="btn btn-secondary">Clear</button>
+  </div>
+
+  <br><br><h4>Final code (submit when all issues are understood)</h4>
+  <textarea id="aiconcept-final" rows="10"></textarea>
+  <br><br>
+  <div class="aiconcept-actions">
+    <button type="button" id="aiconcept-final-submit" class="btn btn-success">Submit final code</button>
+  </div>
+</div>
+
+{{#instructorurl}}
+<div class="aiconcept-card">
+  <a href="{{instructorurl}}">Instructor dashboard →</a>
+</div>
+{{/instructorurl}}

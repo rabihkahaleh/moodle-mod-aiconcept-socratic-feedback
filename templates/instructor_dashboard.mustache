@@ -1,0 +1,25 @@
+<div class="aiconcept-hero">
+  <div class="title">{{name}} — Instructor dashboard</div>
+</div>
+
+<div class="aiconcept-card">
+  <h4>Student progress</h4>
+  <table class="aiconcept-table">
+    <tr>
+      <th>Student</th><th>Turns</th><th>Assistant</th><th>Status</th><th>Updated</th><th>Actions</th>
+    </tr>
+    {{#rows}}
+    <tr>
+      <td>{{name}}<br><span class="aiconcept-badge">{{email}}</span></td>
+      <td>{{turns}}</td>
+      <td>{{assistant}}</td>
+      <td><span class="aiconcept-progress {{status}}">{{statusUC}}</span></td>
+      <td>{{updated}}</td>
+      <td><a href="{{viewurl}}">View transcript →</a></td>
+    </tr>
+    {{/rows}}
+    {{^rows}}
+    <tr><td colspan="6">No submissions yet.</td></tr>
+    {{/rows}}
+  </table>
+</div>
