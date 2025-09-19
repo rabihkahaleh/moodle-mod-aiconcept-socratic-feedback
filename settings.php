@@ -1,4 +1,15 @@
 <?php
+/**
+ * Socratic Code Coach (mod_aiconcept)
+ * Academic Evaluation Only — Non-Commercial, No Redistribution
+ * This research prototype accompanies the manuscript:
+ * “Design and Prototype Evaluation of an AI-Augmented Programming Education Tool.”
+ *
+ * @package   mod_aiconcept
+ * @license   Academic Evaluation License v1.0 (see LICENSE_EVALUATION.txt)
+ * @copyright 2025 Rabih Kahaleh
+ */
+
 defined('MOODLE_INTERNAL') || die();
 
 if ($hassiteconfig) {
@@ -57,3 +68,15 @@ PROMPT;
         12
     ));
 }
+
+// settings.php (at the bottom)
+$settings->add(new admin_setting_heading(
+    'mod_aiconcept/eval_notice',
+    get_string('pluginname', 'mod_aiconcept'),
+    html_writer::div(
+        'This research prototype is licensed for academic evaluation only. ' .
+        'Commercial use and redistribution are prohibited. See LICENSE_EVALUATION.txt.',
+        'alert alert-info'
+    )
+));
+
