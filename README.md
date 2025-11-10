@@ -23,6 +23,5 @@ academic use
 This plugin was used in a feasibility study investigating AI-augmented feedback for first-year programming courses.
 (If you use this work in research, please cite the related publication.)
 
-install
 
-See /docs/installation.md or the Installation Guide in Appendix C/D of the manuscript.
+
